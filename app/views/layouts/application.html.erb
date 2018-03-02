@@ -1,14 +1,68 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Korsite</title>
-    <%= csrf_meta_tags %>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <title>Taxes! Keep On Rolling!</title>
 
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<nav id="nav" class="navbar navbar-expand-lg navbar-light sticky-top ">
+  <a class="navbar-brand" href="#">Keep on Rolling</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarKOR" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-md-end" id="navbarKOR">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Learn</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero-container">
+
+  <!-- Page Header-->
+  <section class="hero-container">
+    <div>
+      <div class="row hero-text">
+        <div class="col-md-10">
+          <hr>
+          <p class="m-b-30">Copy goes here</p>
+          <hr>
+        </div>
+        <div class="col-md-10 text-left">
+          <h1 class="hero-header">KEEP<br>ON<br>ROLLING</h1>
+          <h2 class="m-b-15">Tax Services & Bookkeeping</h2>
+        </div>
+        <div class="col-md-10 text-left">
+            <p><a class="btn btn-warning" href="#">Get your taxes done by someone responsible</a></p>
+            <p><a class="btn btn-warning" href="#">Get Edjimacated for the 2018 Tax Season</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<body>
     <%= yield %>
   </body>
 </html>

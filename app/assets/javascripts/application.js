@@ -11,5 +11,21 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
+//= require jquery-ui
+//= require popper
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+//Custom JS
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if($(document).scrollTop() > 10) {
+            $('#nav').addClass('shrink');
+        }
+        else {
+            $('#nav').removeClass('shrink');
+        }
+    });
+});

@@ -14,7 +14,7 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
-h6, .h6, {
+h6, .h6 {
   font-family: 'Ultra', serif;
 }
 
@@ -23,7 +23,7 @@ h6, .h6, {
 #nav {
   height: 80px;
   background: transparent;
-  position: relative;
+  position: fixed;
   width: 100%;
   z-index: 99999;
   transition: all ease .5s;
@@ -47,6 +47,7 @@ h6, .h6, {
 .hero-container {
   height: 100%;
   width: 100%;
+  min-height: 700px;
   background-image: asset_url("hero-kor.png");
   background-position: center;
   background-repeat: no-repeat;

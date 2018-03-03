@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  layout 'application'
+
   def new
     @message = Message.new
   end

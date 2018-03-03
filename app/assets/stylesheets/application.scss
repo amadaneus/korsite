@@ -23,7 +23,7 @@ h6, .h6, {
 #nav {
   height: 80px;
   background: transparent;
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 99999;
   transition: all ease .5s;

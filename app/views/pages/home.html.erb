@@ -22,14 +22,64 @@
   </section>
 </div>
 
-<main role="main" class="container">
-  <div class="section">
-    <h1>Keep On Rolling</h1>
-    <h2>Taxes are a big responsibility most people throw out the window</h2>
-    <p class="lead">If everyone just listened to their moms, they would keep all their receipts, balance their checkbooks, and not bother us to do it for them.</p>
+<main role="main" class="container-fluid">
 
-    <p class="lead">Fortunately, you're all slackers and we're one of the most trusted tax service and bookkeeping offices in Texas. </p>
-    <hr>
+  <div class="section">
+    <h1 class="mt-5">We make taxes simple for Truckers & Logistics Professionals.</h1>
+    <p><a class="btn btn-outline-success" href="#">That's what I need!</a></p>
+    <p><a class=" btn btn-outline-primary" href="#">Tell me more.</a></p>
+  </div>
+
+  <div class="section">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="mt-5">Keep On Rolling</h1>
+        <p>Based in Dallas, we've offered tax services and bookkeeping to Drivers, Brokers, and Fleet Owners
+          for over 20 years. They trust us to keep their accounts balanced while they're keeping freight moving.</p>
+      </div>
+
+      <div class="col">
+        <h2>Tax Services</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <div class="col">
+        <h2>Bookkeeping</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <div class="col-12">
+        <h2 class="mt-5">Why us?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="row">
+      <div class="col copybox-green justify-content-center">
+        <h1>Are you a trucker that needs assistance with your taxes?</h1>
+      </div>
+      <div class="col">
+        <p>We've been doing taxes for truckers and logistics professionals for over 20 years.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col copybox">
+      </div>
+      <div class="col copybox-green">
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>Contact Us</h1>
+    <%= render :partial => 'messages/contact_form', :locals => {:message => Message.new} %>
   </div>
 
 </main><!-- /.container -->

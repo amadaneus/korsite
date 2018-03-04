@@ -40,10 +40,7 @@
 
   <%= yield %>
 
-  <div class="section">
-    <h1>Contact Us</h1>
-    <%= render :partial => 'messages/contact_form', :locals => {:message => Message.new} %>
-  </div>
+  <%= render "shared/application_footer" %>
 
   </body>
 

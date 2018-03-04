@@ -63,7 +63,6 @@
   <div class="module">
     <div class="row">
       <div class="col copybox-green justify-content-center">
-        <h1>Are you a trucker that needs assistance with your taxes?</h1>
       </div>
       <div class="col">
         <p>We've been doing taxes for truckers and logistics professionals for over 20 years.</p>
@@ -79,7 +78,13 @@
 
   <div class="section">
     <h1>Contact Us</h1>
-    <%= render :partial => 'messages/contact_form', :locals => {:message => Message.new} %>
+    <%= render :partial => 'messages/contact_form' %>
   </div>
+
+  <div class="section">
+    <h1>Registration</h1>
+    <%= render :partial => 'registrations/registration_form' %>
+  </div>
+
 
 </main><!-- /.container -->

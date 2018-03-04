@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
+    @message= Message.new
+    @registration = Registration.new
   end
 
   def blog
@@ -8,6 +10,4 @@ class PagesController < ApplicationController
   def about
   end
 
-  def contact
-  end
 end

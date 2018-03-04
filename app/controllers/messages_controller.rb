@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
     if @message.valid?
       MessageMailer.contact(@message).deliver_now
-      redirect_to new_message_url, notice: "Message received, we'll contact you within 48 hours! Thank you."
+      redirect_to root_path, notice: "Message received, we'll contact you within 48 hours! Thank you."
     else
       render :new
     end
@@ -19,6 +19,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name, :email, :body)
+    params.require(:message).permit(:name, :phone, :email, :role, :income, :status)
   end
 end

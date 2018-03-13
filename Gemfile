@@ -30,6 +30,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+end
+
+group :development, :production do
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false

@@ -20,4 +20,6 @@
 
 /.idea
 /config/secrets.yml
+/config/application.yml
+/config/database.yml
 .env

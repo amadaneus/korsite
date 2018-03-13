@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.1.5'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 
+gem 'figaro'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -23,14 +24,17 @@ gem 'jquery-ui-rails'
 gem 'popper_js', '~> 1.12.9'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 group :development do

@@ -28,4 +28,16 @@ $(document).ready(function() {
             $('#nav').removeClass('shrink');
         }
     });
+
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        var navHeight = $('#nav').height();
+
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - navHeight
+            }, 1000);
+        }
+    });
 });

@@ -7,6 +7,7 @@
 body, html {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
+  background-color: #dbe3dbff;
 }
 
 h1, .h1,
@@ -32,9 +33,14 @@ h6, .h6 {
 #nav.shrink {
   height: 60px;
   transition: all ease .5s;
-  background: white;
+  background: #dbe3dbff;
   padding: 1em;
 }
+
+.navbar-brand {
+  font-family: 'Ultra', serif;
+}
+
 
 /* Content Containers */
 
@@ -52,11 +58,61 @@ h6, .h6 {
   padding: 0 0;
 }
 
+.module-feat {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  padding: 1.5rem 0;
+  display: block;
+}
+
+.module-feat h1 {
+  font-size: 3em;
+}
+
+.module-img1 {
+  background-image: asset_url("kor-service1b.jpg");
+  max-width: 100%;
+  min-height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.module-img2 {
+  background-image: asset_url("kor-service2.jpg");
+  max-width: 100%;
+  min-height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.module-img3 {
+  background-image: asset_url("kor-service3.jpg");
+  max-width: 100%;
+  min-height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.bg-korprimary {
+  background-color: #dbe3dbff;
+}
+.bg-korsecondary {
+  background-color: #93ac93ff;
+}
+.bg-kortertiary {
+  background-color: #374837ff;
+}
+
 .hero-container {
   height: 100%;
   width: 100%;
   min-height: 700px;
-  background-image: asset_url("hero-kor.png");
+  background-image: asset_url("hero-kor2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,6 +133,15 @@ h6, .h6 {
   line-height: 80%;
 }
 
+.hero-copy {
+  font-size: 1.1em;
+  line-height: 80%;
+}
+
+.hero-hr {
+  border-top: 3px solid white;
+}
+
 /* Buttons */
 
 .btn-hero p {
@@ -85,12 +150,42 @@ h6, .h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
-.navbar-brand {
-  font-family: 'Ultra', serif;
+.btn-kor {
+  color: #fff;
+  background-color: #374837ff;
+  border-color: #374837ff;
 }
+
+.btn-kor:hover {
+  color: #fff;
+  background-color: #375537;
+  border-color: #375537;
+}
+
+.btn-kor:focus, .btn-kor.focus {
+  box-shadow: 0 0 0 0.2rem rgba(55, 72, 55, 0.5);
+}
+
+.btn-kor.disabled, .btn-kor:disabled {
+  color: #fff;
+  background-color: #3d483d;
+  border-color: #3d483d;
+}
+
+.btn-kor:not(:disabled):not(.disabled):active, .btn-kor:not(:disabled):not(.disabled).active,
+.show > .btn-kor.dropdown-toggle {
+  color: #fff;
+  background-color: #374837ff;
+  border-color: #374837ff;
+}
+
+.btn-kor:not(:disabled):not(.disabled):active:focus, .btn-kor:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(55, 72, 55, 0.5);
+}
+
 
 /* Footer */
 
@@ -133,6 +228,89 @@ h6, .h6 {
 }
 
 /* Images */
-.img-box {
+.img-round {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
 
+.img-team {
+  max-width: 320px;
+  height: auto;
+}
+
+
+/* Forms */
+
+.form-kor-control {
+  height: 45px;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #374837ff;
+  background-color: transparent;
+  border: 0px transparent;
+  border-bottom: 3px solid #374837ff;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.custom-control-label::before {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  content: "";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #93ac93ff;
+}
+
+.custom-control-inline {
+
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: .5rem;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #374837ff;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  background-color: #374837ff;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(55, 72, 55, 0.25);
+}
+
+.custom-control-input:active ~ .custom-control-label::before {
+  color: #fff;
+  background-color: #374837ff;
+}
+
+.custom-control-input:disabled ~ .custom-control-label {
+  color: #6c757d;
+}
+
+.custom-control-input:disabled ~ .custom-control-label::before {
+  background-color: #e9ecef;
+}
+
+.kor-hr {
+  border-top: 5px solid #374837ff;
+}
+
+/* Scroll Anims */
+.scroll-section {
+  scroll-behavior: smooth;
 }

@@ -3,71 +3,83 @@
   <%= @registration.errors.full_messages.join(', ') %>
 
   <div class="form-group">
-    <%= form.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
+    <%= form.text_field :name, class: 'form-kor-control', placeholder: 'Your Name' %>
   </div>
 
   <div class="form-group">
-    <%= form.text_field :phone, class: 'form-control', placeholder: 'Your Phone Number' %>
+    <%= form.text_field :phone, class: 'form-kor-control', placeholder: 'Your Phone Number' %>
   </div>
 
   <div class="form-group">
-    <%= form.email_field :email, class: 'form-control', placeholder: 'Your Email' %>
+    <%= form.email_field :email, class: 'form-kor-control', placeholder: 'Your Email' %>
   </div>
 
   <div class="form-group">
-    <%= form.radio_button :role, 'driver' %>
-    <%= form.label :role, 'Driver' %>
-
-    <%= form.radio_button :role, 'broker' %>
-    <%= form.label :role, 'Broker' %>
-
-    <%= form.radio_button :role, 'fleet owner' %>
-    <%= form.label :role, 'Fleet Owner' %>
-
-    <%= form.radio_button :role, 'other' %>
-    <%= form.label :role, 'Other' %>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :role, 'driver', id: 'customRadioInline1', class: 'custom-control-input' %>
+      <%= form.label :role, 'Driver', class: 'custom-control-label', for: 'customRadioInline1' %>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :role, 'broker', id: 'customRadioInline2', class: 'custom-control-input' %>
+      <%= form.label :role, 'Broker', class: 'custom-control-label', for: 'customRadioInline2'  %>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :role, 'fleet owner', id: 'customRadioInline3', class: 'custom-control-input' %>
+      <%= form.label :role, 'Fleet Owner', class: 'custom-control-label', for: 'customRadioInline3'  %>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :role, 'other', id: 'customRadioInline4', class: 'custom-control-input' %>
+      <%= form.label :role, 'Other', class: 'custom-control-label', for: 'customRadioInline4'  %>
+    </div>
   </div>
 
   <div class="form-group">
-    <span>
-      <%= form.radio_button :income, '$30,000-$36,000' %>
-      <%= form.label :income, '$30,000-$36,000' %>
-    </span>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :income, '$30,000-$36,000', id: 'customRadioInline5', class: 'custom-control-input' %>
+      <%= form.label :income, '$30,000-$36,000', class: 'custom-control-label', for: 'customRadioInline5' %>
+    </div>
 
-    <span>
-      <%= form.radio_button :income, '$36,500-$42,000' %>
-      <%= form.label :income, '$36,500-$42,000' %>
-    </span>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :income, '$36,500-$42,000', id: 'customRadioInline6', class: 'custom-control-input'  %>
+      <%= form.label :income, '$36,500-$42,000', class: 'custom-control-label', for: 'customRadioInline6' %>
+    </div>
 
-    <span>
-      <%= form.radio_button :income, '$42,500-$48,000' %>
-      <%= form.label :income, '42,500-$48,000' %>
-    </span>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :income, '$42,500-$48,000', id: 'customRadioInline7', class: 'custom-control-input'  %>
+      <%= form.label :income, '$42,500-$48,000', class: 'custom-control-label', for: 'customRadioInline7' %>
+    </div>
 
-    <span>
-      <%= form.radio_button :income, '$48,500-54,000' %>
-      <%= form.label :income, '$48,500-54,000' %>
-    </span>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :income, '$48,500-54,000', id: 'customRadioInline8', class: 'custom-control-input'  %>
+      <%= form.label :income, '$48,500-54,000', class: 'custom-control-label', for: 'customRadioInline8' %>
+    </div>
   </div>
 
   <div class="form-group">
-    <span>
-      <%= form.radio_button :status, 'employed' %>
-      <%= form.label :income, 'Employed/W-2' %>
-    </span>
-
-    <span>
-      <%= form.radio_button :status, 'contractor' %>
-      <%= form.label :income, 'Contractor-LLC' %>
-    </span>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :status, 'employed', id: 'customRadioInline9', class: 'custom-control-input'   %>
+      <%= form.label :income, 'Employed/W-2', class: 'custom-control-label', for: 'customRadioInline9' %>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :status, 'contractor', id: 'customRadioInline10', class: 'custom-control-input'  %>
+      <%= form.label :income, 'Contractor-LLC', class: 'custom-control-label', for: 'customRadioInline10' %>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :status, 'scorp', id: 'customRadioInline11', class: 'custom-control-input'  %>
+      <%= form.label :income, 'S-Corp', class: 'custom-control-label', for: 'customRadioInline11' %>
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      <%= form.radio_button :status, 'ccorp', id: 'customRadioInline12', class: 'custom-control-input'  %>
+      <%= form.label :income, 'C-Corp', class: 'custom-control-label', for: 'customRadioInline12' %>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= form.text_area :body, class: 'form-control', placeholder: 'Tell us about yourself and your needs' %>
+    <%= form.text_area :body, class: 'form-kor-control', placeholder: 'Tell us about yourself' %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Send", class: 'btn btn-primary' %>
+    <%= form.submit "Send", class: 'btn btn-kor' %>
   </div>
 
 <% end %>

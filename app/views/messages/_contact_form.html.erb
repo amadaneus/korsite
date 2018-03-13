@@ -3,19 +3,19 @@
   <%= @message.errors.full_messages.join(', ') %>
 
   <div class="form-group">
-    <%= form.text_field :name, class: 'form-control', placeholder: 'Your Name' %>
+    <%= form.text_field :name, class: 'form-kor-control mb-3', placeholder: 'Your Name' %>
   </div>
 
   <div class="form-group">
-    <%= form.email_field :email, class: 'form-control', placeholder: 'Your Email' %>
+    <%= form.email_field :email, class: 'form-kor-control mb-3', placeholder: 'Your Email' %>
   </div>
 
   <div class="form-group">
-    <%= form.text_area :body, class: 'form-control', placeholder: 'Type Your Message to Us here' %>
+    <%= form.text_area :body, class: 'form-kor-control', placeholder: 'Drop Us a Line' %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Send", class: 'btn btn-primary' %>
+    <%= form.submit "Send", class: 'btn btn-kor' %>
   </div>
 
 <% end %>

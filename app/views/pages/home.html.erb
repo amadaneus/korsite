@@ -1,153 +1,85 @@
 <div class="hero-container">
-
   <!-- Page Header-->
-  <section class="hero-container">
-    <div>
-      <div class="row hero-text">
-        <div class="col-md-10">
-          <hr>
-          <p class="m-b-30">Copy goes here</p>
-          <hr>
-        </div>
-        <div class="col-md-10 text-left">
-          <h1 class="hero-header">KEEP<br>ON<br>ROLLING</h1>
-          <h2 class="m-b-15">Tax Services & Bookkeeping</h2>
-        </div>
-        <div class="col-md-10 text-left">
-          <p><a class="btn btn-warning" href="#">Get your taxes done by someone responsible</a></p>
-          <p><a class="btn btn-warning" href="#">Get Edjimacated for the 2018 Tax Season</a></p>
-        </div>
+  <div class="container">
+    <div class="row hero-text">
+      <div class="col-md-10">
+        <hr class="hero-hr">
+        <p class="hero-copy text-left strong m-b-30">You know you need to do your taxes, but you're too busy.<br>
+          We get--we're tax professionals. Let us help you...</p>
+        <hr class="hero-hr">
+      </div>
+      <div class="col-md-10 text-left">
+        <h1 class="hero-header">KEEP<br>ON<br>ROLLING</h1>
+        <h2 class="m-b-15">Tax Services & Bookkeeping</h2>
+      </div>
+      <div class="col-md-10 text-left">
+        <p><%= link_to 'Get your taxes done by someone responsible', ("#about"), class: 'btn btn-kor' %></p>
+        <p><%= link_to 'Get Edjimacated for the 2018 Tax Season', ("#news"), class: 'btn btn-kor' %></p>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 
-<main role="main" class="container-fluid">
-  <div class="container">
+<main role="main">
+  <div class="container scroll-section" id="about">
     <div class="section my-5">
       <h1 class="section-header">We make taxes simple for<br> Truckers & Logistics Professionals.</h1>
       <p>Part of being road legal is staying on top of your taxes. Based in Dallas, we've offered tax services and bookkeeping to
         Drivers, Brokers, Fleet Owners, and Logistics professionals for over 20 years.</p>
       <p>They all trust us to keep their accounts balanced while they're keeping freight moving.</p>
       <p>And we even use our knowledge to Edjimacate drivers on how to win during tax season.</p>
-      <p><a class="btn btn-outline-success" href="#">That's what I need!</a></p>
-      <p><a class=" btn btn-outline-primary" href="#">Edjimacate me.</a></p>
+      <p><a class="btn btn-kor" href="#">That's what I need!</a></p>
+      <p><a class=" btn btn-kor" href="#">Edjimacate me.</a></p>
     </div>
   </div>
 
-  <div class="module">
-    <div class="row bg-light">
-      <div class="section">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="mt-5">Keep On Rolling</h1>
-            <p>Based in Dallas, we've offered tax services and bookkeeping to Drivers, Brokers, Fleet Owners, and Logistics
-               professionals for over 20 years. They trust us to keep their accounts balanced while they're keeping freight moving.</p>
-          </div>
+  <div id="feature1" class="module bg-korprimary">
+    <%= render 'feature1' %>
+  </div>
 
-          <div class="col">
-            <h2>Tax Services</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat.</p>
-          </div>
+  <div id="feature2" class="module bg-korprimary">
+    <%= render 'feature2' %>
+  </div>
 
-          <div class="col">
-            <h2>Bookkeeping</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat.</p>
-          </div>
+  <div id="feature3" class="module bg-korprimary">
+    <%= render 'feature3' %>
+  </div>
 
-          <div class="col">
-            <h2>Knowledge</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat.</p>
-          </div>
+  <div id="team" class="module bg-korprimary">
+    <%= render 'team' %>
+  </div>
 
-          <div class="col-12">
-            <h2 class="my-3">Why us?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua.</p>
-          </div>
+  <div class="container">
+    <hr class="kor-hr my-5">
+  </div>
 
-          <div class="col-12">
-            <h2 class="my-3">Who we roll with</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua.</p>
-          </div>
-          <div class="card-group mb-5">
-            <div class="card">
-              <%= image_tag ("truck-driver.jpg"), class: 'card-img-top'%>
-              <div class="card-body">
-                <h5 class="card-title">Drivers</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.</p>
-              </div>
-            </div>
-            <div class="card">
-              <%= image_tag ("broker.jpg"), class: 'card-img-top'%>
-              <div class="card-body">
-                <h5 class="card-title">Brokers</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.</p>
-              </div>
-            </div>
-            <div class="card">
-              <%= image_tag ("fleet-owner.jpg"), class: 'card-img-top'%>
-              <div class="card-body">
-                <h5 class="card-title">Fleet Owners</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.</p>
-              </div>
-            </div>
-            <div class="card">
-              <%= image_tag ("fleet-owner2.jpg"), class: 'card-img-top'%>
-              <div class="card-body">
-                <h5 class="card-title">Ops Professionals</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.</p>
-              </div>
-            </div>
-          </div>
+
+  <div id="reg" class="module bg-korprimary scroll-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-7">
+          <h2 class="text-left mt-5">Need accountants who
+            can sort out your mess and keep your books in line?</h2>
+          <h5 class="text-left mb-2">Fill out this form to find out how we can keep you rolling:</h5>
+          <%= render :partial => 'registrations/registration_form' %>
+        </div>
+        <div class="col-5">
+          <%= image_tag ("kor2.jpg"), class: 'img-fluid'%>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="module">
-    <div class="row">
-      <div class="col-6 mt-3 offset-md-1">
-        <h1 class="text-left mt-5">Need accountants who<br>
-                              can sort out your mess<br>
-                              and keep your books in line?</h1>
-        <br>
-        <h4 class="text-left">Find out how we can keep you rolling</h4>
-        <h3 class="text-left mb-2">Fill out this form:</h3>
-        <%= render :partial => 'registrations/registration_form' %>
-      </div>
-
-      <div class="col-5">
-        <%= image_tag ("kor2.jpg"), class: 'img-fluid'%>
-      </div>
-    </div>
-  </div>
-
-  <div class="module">
-    <div class="row bg-light">
-      <div class="section">
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <h1 class="text-center mt-5">Contact Us</h1>
-          </div>
-          <div class="col mb-5">
-            <%= render :partial => 'messages/contact_form' %>
-          </div>
+  <div id="contact" class="module bg-korsecondary scroll-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <div class="col">
+              <h1 class="text-left mt-5">Contact Us</h1>
+            </div>
+            <div class="col mb-5">
+              <%= render :partial => 'messages/contact_form' %>
+            </div>
         </div>
       </div>
     </div>

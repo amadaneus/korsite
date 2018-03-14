@@ -1,6 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
-
+require 'capistrano/puma'
 set :application, "korsite"
 set :repo_url, "git@github.com:amadaneus/korsite.git"
 set :branch, :master
@@ -15,7 +15,7 @@ set :rvm_type, :user
 set :puma_rackup, -> { File.join(current_path, 'config.ru')}
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
-set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/korsite.sock"
 set :puma_conf, "#{shared_path}/puma.rb"
 set :puma_access_log, "#{shared_path}/log/puma_error.log"
 set :puma_error_log, "#{shared_path}/log/puma_access.log"

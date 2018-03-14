@@ -31,11 +31,3 @@
 
 en:
   hello: "Hello world"
-
-  message_mailer:
-    contact:
-      subject: "Message from www.keeponrollingtaxes.com"
-
-  registration_mailer:
-    contact:
-      subject: "New Client Request from www.keeponrollingtaxes.com"

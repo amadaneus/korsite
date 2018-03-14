@@ -2,7 +2,7 @@
 lock "~> 3.10.1"
 
 set :application, "korsite"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:amadaneus/korsite.git"
 set :branch, :master
 set :deploy_to, '/var/www/korsite'
 set :pty, true

@@ -14,7 +14,6 @@ if platform :mswin, :mingw, :x64_mingw do
   gem 'nokogiri', :platform => [:mswin, :mingw]
 end
 
-gem 'figaro'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -38,13 +37,18 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
-group :development, :production do
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
-end
+  group :development do
+    gem 'capistrano', '3.10.1'
+    gem 'capistrano-rvm'
+    gem 'capistrano3-nginx'
+    gem 'capistrano3-puma'
+    gem 'capistrano-rails'
+    gem 'capistrano-rails-db'
+    gem 'capistrano-rails-console'
+    gem 'capistrano-upload-config'
+    gem 'sshkit-sudo'
+  end
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

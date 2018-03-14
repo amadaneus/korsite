@@ -22,4 +22,6 @@
 /config/secrets.yml
 /config/application.yml
 /config/database.yml
+/config/database.production.yml
+/config/secrets.production.yml
 .env

@@ -11,12 +11,12 @@ set :pty, true
 set :use_sudo, false
 set :stage, :production
 set :deploy_via, :remote_cache
-set :deploy_to, '/home/#{fetch(:user)}/apps/#{fetch(:application)}'
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :keep_releases, 5
 set :rvm_type, :user
 
-# set :linked_files, %w{config/database.yml config/application.yml}
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :linked_files, %w{config/database.yml config/application.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru')}
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"

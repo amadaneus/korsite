@@ -6,7 +6,13 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.5'
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'mysql2', '>= 0.3.18', '< 0.5', platform: :ruby
+gem 'nokogiri', :platform => :ruby
+
+if platform :mswin, :mingw, :x64_mingw do
+  gem 'mysql2', '>= 0.3.18', '< 0.5', :platform => [:mswin, :mingw]
+  gem 'nokogiri', :platform => [:mswin, :mingw]
+end
 
 gem 'figaro'
 gem 'puma', '~> 3.7'
@@ -46,3 +52,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+end

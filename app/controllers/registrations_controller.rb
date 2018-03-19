@@ -9,8 +9,8 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new registration_params
 
     if @registration.valid?
-      RegistrationMailer.screen(@registration).deliver_now
-      redirect_to root_path, notice: "Message received, we'll contact you within 48 hours! Thank you."
+      RegistrationMailer.screen(@registration).deliver!
+      redirect_to new_registration_path, notice: "Message received, we'll contact you within 48 hours! Thank you."
     else
       render :new
     end

@@ -18,7 +18,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
+      'Cache-Control' => 'public, max-age=31536000'
     }
   else
     config.action_controller.perform_caching = false
@@ -45,10 +45,17 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
-
-  # Use an evented file watcher to asynchronously detect changes in source code,
-  # routes, locales, etc. This feature depends on the listen gem.
-  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_options = { from: ENV['EMAIL_USER'] }
+  config.action_mailer.default_url_options = { :host => 'localhost', port: "3000"}
+  config.action_mailer.smtp_settings = {
+      address: ENV['EMAIL_SMTP'],
+      port: 587,
+      domain: 'keeponrollingtaxes.com',
+      user_name: ENV['EMAIL_USER'],
+      password: ENV['EMAIL_PASS'],
+      authentication: 'plain',
+      enable_starttls_auto: true,
+  }
 end

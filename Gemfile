@@ -12,6 +12,7 @@ gem 'nokogiri', :platform => :ruby
 if platform :mswin, :mingw, :x64_mingw do
   gem 'mysql2', '>= 0.3.18', '< 0.5', :platform => [:mswin, :mingw]
   gem 'nokogiri', :platform => [:mswin, :mingw]
+  gem 'bcrypt', '~> 3.1.7', :platform => [:ruby, :mingw, :x64_mingw]
 end
 
 gem 'puma', '~> 3.7'
@@ -20,14 +21,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-# gem 'redis', '~> 4.0'
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'popper_js', '~> 1.12.9'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
+gem 'figaro'
+
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +49,7 @@ end
     gem 'capistrano-rails-db'
     gem 'capistrano-rails-console'
     gem 'capistrano-upload-config'
+    gem 'capistrano-figaro-yml'
     gem 'sshkit-sudo'
   end
 

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Blog | Keep On Rolling</title>
+
+  <%= stylesheet_link_tag    'blog', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+  <nav class="navbar navbar-light flex-md-nowrap p-0">
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <nav class="col-md-2 d-none d-md-block sidebar">
+        <%= render "shared/blog_sidebar_left" %>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pb-5">
+        <div class="row">
+          <div id="content-wrapper" class="col-md-7 pb-5">
+            <% if flash[:notice] %>
+              <div class="alert alert-success"><%= flash[:notice] %></div>
+            <% end %>
+
+            <% if flash[:alert] %>
+              <div class="alert alert-danger"><%= flash[:alert] %></div>
+            <% end %>
+
+            <%= yield %>
+          </div>
+
+          <nav class="col-md-2 ml-5 mr-auto navbar-light sidebar-right">
+            <%= render "shared/blog_sidebar_right" %>
+          </nav>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <footer class="footer">
+              <%= render "shared/blog_footer" %>
+            </footer>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

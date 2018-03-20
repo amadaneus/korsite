@@ -396,3 +396,100 @@ h6, .h6 {
 .scroll-section {
   scroll-behavior: smooth;
 }
+
+/* Kaminari Pagination */
+
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 1px;
+  border-radius: 0;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #374837ff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.page-link:hover {
+  color: #374837ff;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.page-link:focus {
+  z-index: 2;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(55, 72, 55, 0.5);
+}
+
+.page-link:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #374837ff;
+  border-color: #374837ff;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+.pagination {
+  border-left: 1px solid #ddd;
+  border-radius: 0;
+  .first {
+    padding: 0;
+    float: none;
+    border: none;
+  }
+  .prev {
+    padding: 0;
+    float: none;
+    border: none;
+  }
+  .page {
+    padding: 0;
+    float: none;
+    border: none;
+  }
+  .next {
+    padding: 0;
+    float: none;
+    border: none;
+  }
+  .last {
+    padding: 0;
+    float: none;
+    border: none;
+  }
+}

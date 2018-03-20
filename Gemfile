@@ -31,6 +31,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 gem 'figaro'
 
 gem 'devise'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

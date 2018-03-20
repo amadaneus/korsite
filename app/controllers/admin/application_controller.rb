@@ -1,5 +1,5 @@
 class Admin::ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-
+  protect_from_forgery
+  include 'DeviseWhitelist'
   layout 'admin/application'
 end

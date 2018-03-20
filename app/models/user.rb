@@ -6,4 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :name, :email
+
+  def self.search(query)
+    where("name like ? OR email like ?", "%#{query}%", "%#{query}%")
+  end
+
 end

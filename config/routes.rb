@@ -2,14 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'comments/new'
-
-  get 'categories', to: 'categories#index'
-
-  get 'blog', to: 'posts#index'
-
-  get 'posts/show'
-
   get 'about', to: 'pages#about'
 
   get 'contact', to: 'messages#new', as: 'new_message'
@@ -17,6 +9,12 @@ Rails.application.routes.draw do
 
   get 'registration', to: 'registrations#new', as: 'new_registration'
   post 'registration', to: 'registrations#create', as: 'create_registration'
+
+  get 'comments/new'
+
+  delete 'delete_user_registration', to: 'devise/registrations#destroy'
+
+  get 'categories', to: 'categories#index'
 
   resources :posts, :categories, :comments
 

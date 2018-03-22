@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   validates :body, presence: true
 
+  mount_uploader :image, ManagerUploader
 
   def self.search(query)
     where("title like ? OR body like ?", "%#{query}%", "%#{query}%")

@@ -3,13 +3,13 @@
     <% @posts.each do |post| %>
       <h3><%= post.title %></h3>
       <small>Posted by <%= post.user_id %> on <%= post.created_at %></small>
-      <img src="assets/images/kor-team2.jpg" class="img-blog pb-5">
+      <%= image_tag post.image, class:'img-blog pb-5' %>
       <div class="post-content">
         <p><%= post.body %></p>
         <a href="#" class="btn btn-kor btn-block">Read More</a>
       </div>
     <% end %>
   <% else %>
-    <p>There are no posts for this topic yet!</p>
+    <p>There are no posts for this yet!</p>
   <% end %>
 </div>

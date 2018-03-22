@@ -321,6 +321,7 @@ DEPENDENCIES
   popper_js (~> 1.12.9)
   puma (~> 3.7)
   rails (~> 5.1.5)
+  rails-html-sanitizer
   sass-rails (~> 5.0)
   selenium-webdriver
   sshkit-sudo

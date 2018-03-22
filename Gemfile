@@ -33,6 +33,7 @@ gem 'figaro'
 gem 'devise'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'ckeditor', '~> 4.2', '>= 4.2.4'
+gem 'rails-html-sanitizer'
 
 # Image&File Management
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'

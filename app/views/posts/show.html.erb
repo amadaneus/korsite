@@ -3,6 +3,6 @@
   <small>Posted by <%= @post.user.name %> on <%= @post.created_at %></small>
   <%= image_tag @post.image, class:'img-blog pb-5' %>
   <div class="post-content">
-    <p><%= @post.body %></p>
+    <p><%= sanitize @post.body %></p>
   </div>
 </div>

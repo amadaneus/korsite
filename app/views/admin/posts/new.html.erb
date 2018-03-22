@@ -40,6 +40,9 @@
         <%= form.label :image %>
         <%= form.file_field :image %>
       </div>
+      <% if @post.image.exists? %>
+        <%= image_tag @post.image.url, width: '50%' %>
+      <% end %>
       <br>
 
       <div class="form-group">
@@ -49,11 +52,13 @@
 
       <div class="form-group">
         <%= form.label :body %>
-        <%= form.text_area :body, rows: 15, class: 'form-control' %>
+        <%= form_for @post do |form| %>
+          <%= form.cktext_area :body, class: 'form-control', rows: 15, ckeditor: { language: 'usa'} %>
+        <% end %>
       </div>
       <br>
       <%= form.submit "Submit", class: 'btn btn-primary' %>
-      <%= link_to "Cancel", admin_categories_path, class: 'btn btn-default' %>
+      <%= link_to "Cancel", admin_posts_path, class: 'btn btn-default' %>
     <% end %>
   </div>
 </div>

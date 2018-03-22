@@ -14,6 +14,7 @@
 //= require jquery3
 //= require jquery-ui
 //= require popper
+//= require ckeditor/init
 //= require bootstrap
 //= require turbolinks
 //= require_tree .

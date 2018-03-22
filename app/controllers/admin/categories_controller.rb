@@ -37,9 +37,9 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def index
     if params[:search]
-      @categories = Categories.search(params[:search]).page(params[:page]).per(5).order('created_at DESC')
+      @categories = Category.search(params[:search]).page(params[:page]).per(5).order('created_at DESC')
     else
-      @categories = Categories.page(params[:page]).per(5).order('created_at DESC')
+      @categories = Category.page(params[:page]).per(5).order('created_at DESC')
     end
   end
 

@@ -1,2 +1,8 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="post pb-5">
+  <h3><%= @post.title %></h3>
+  <small>Posted by <%= @post.user.name %> on <%= @post.created_at %></small>
+  <%= image_tag @post.image, class:'img-blog pb-5' %>
+  <div class="post-content">
+    <p><%= @post.body %></p>
+  </div>
+</div>

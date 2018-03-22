@@ -7,12 +7,14 @@
   </p>
 </ul>
 
-<ul class="nav">
-  <h3>Blog Pages</h3>
-  <li>
-    <p><%= paginate @posts %></p>
-  </li>
-</ul>
+<% if params[:action] == 'index' %>
+  <ul class="nav">
+    <h3>Blog Pages</h3>
+    <li>
+      <p><%= render(:partial => 'shared/pagination')%></p>
+    </li>
+  </ul>
+<% end %>
 
 <ul class="nav">
   <h3>Blog Topics</h3>

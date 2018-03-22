@@ -1,11 +1,11 @@
 <div class="post pb-5">
   <% if @posts.exists? %>
     <% @posts.each do |post| %>
-      <h3><%= post.title %></h3>
-      <small>Posted by <%= post.user_id %> on <%= post.created_at %></small>
+      <h3><%= link_to post.title, post %></h3>
+      <small>Posted by <%= post.user.name %> on <%= post.created_at %></small>
       <%= image_tag post.image, class:'img-blog pb-5' %>
       <div class="post-content">
-        <p><%= post.body %></p>
+        <p><%= post.body.truncate(200, omission: '...Read More') %></p>
         <a href="#" class="btn btn-kor btn-block">Read More</a>
       </div>
     <% end %>

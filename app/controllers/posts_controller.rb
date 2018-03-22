@@ -7,9 +7,11 @@ class PostsController < ApplicationController
     else
       @posts = Post.page(params[:page]).per(5).order('created_at DESC')
     end
+    @categories = Category.all
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
 end

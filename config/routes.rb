@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
   get 'about', to: 'pages#about'
 
@@ -12,12 +12,9 @@ Rails.application.routes.draw do
 
   get 'comments/new'
 
-  delete 'delete_user_registration', to: 'devise/registrations#destroy'
-
   resources :posts, :categories, :comments
 
   namespace :admin do
-    get 'sessions/new'
     get 'dashboard', to: 'dashboards#dashboard'
   end
 

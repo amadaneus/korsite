@@ -34,6 +34,17 @@ h6, .h6 {
   width: 100%;
 }
 
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: block;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
 .navbar {
   height: 100px;
   overflow: auto;
@@ -493,4 +504,14 @@ h6, .h6 {
     float: none;
     border: none;
   }
+}
+
+.blog-link {
+  color: #333;
+}
+
+.blog-link:hover {
+  color: #dbe3dbff;
+  transition: .2s;
+  text-decoration: none;
 }

@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Admin Dashboard</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Latest Post</th>
+        <th>Author</th>
+        <th>Date Created</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= link_to @posts.last[:title], post_path(@posts.last[:id]) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

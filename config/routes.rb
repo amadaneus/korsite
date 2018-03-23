@@ -14,12 +14,11 @@ Rails.application.routes.draw do
 
   delete 'delete_user_registration', to: 'devise/registrations#destroy'
 
-  get 'categories', to: 'categories#index'
-
   resources :posts, :categories, :comments
 
   namespace :admin do
     get 'sessions/new'
+    get 'dashboard', to: 'dashboards#dashboard'
   end
 
   namespace :admin do

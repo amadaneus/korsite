@@ -1,22 +1,12 @@
 class CategoriesController < ApplicationController
-  def show
-  end
+  layout 'blog'
 
   def index
+    @categories = Category.all
   end
 
-  def new
+  def show
+    @category = Category.find(params[:id])
   end
 
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end

@@ -1,33 +1,37 @@
-<div class="card">
-  <div class="card-body">
-    <h2 class="card-title">Manage Posts <%= link_to "Create New", new_admin_post_path,
-                                                    class: 'btn btn-success pull-right' %></h2>
-    <% if @posts.exists? %>
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th>Post Title</th>
-          <th>Post Category</th>
-          <th>Date Created</th>
-          <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><%= paginate @posts %></tr>
-        <% @posts.each do |post| %>
+<%if current_user %>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Manage Posts <%= link_to "Create New", new_admin_post_path,
+                                                      class: 'btn btn-success pull-right' %></h2>
+      <% if @posts.exists? %>
+        <table class="table table-striped">
+          <thead>
           <tr>
-            <td><%= post.title %></td>
-            <td><%= post.category.name %></td>
-            <td><%= post.created_at.to_time.strftime('%b %e %Y at %l:%M %p') %></td>
-            <td><%= link_to "Edit", edit_admin_post_path(post), class: 'btn btn-warning' %>
-              <%= link_to "Delete", admin_post_path(post), class: 'btn btn-danger',
-                          method: :delete, data: {confirm: 'Are you sure?'}%></td>
+            <th>Post Title</th>
+            <th>Post Category</th>
+            <th>Date Created</th>
+            <th>Actions</th>
           </tr>
-        <% end %>
-        </tbody>
-      </table>
-    <% else %>
-      <p>There are no posts yet!</p>
-    <% end %>
+          </thead>
+          <tbody>
+          <tr><%= paginate @posts %></tr>
+          <% @posts.each do |post| %>
+            <tr>
+              <td><%= post.title %></td>
+              <td><%= post.category.name %></td>
+              <td><%= post.created_at.to_time.strftime('%b %e %Y at %l:%M %p') %></td>
+              <td><% if can? :update, post %><%= link_to "Edit", edit_admin_post_path(post), class: 'btn btn-warning' %><% end %>
+                <%if can? :destroy, post %><%= link_to "Delete", admin_post_path(post), class: 'btn btn-danger',
+                            method: :delete, data: {confirm: 'Are you sure?'}%><% end %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>There are no posts yet!</p>
+      <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <% controller.redirect_to new_user_session_path %>
+<% end %>

@@ -1,64 +1,57 @@
-<div class="card">
-  <div class="card-body">
-    <h2 class="card-title">Edit Your Post</h2>
-    <%= form_for [:admin, @post] do |form| %>
-      <% if @post.errors.any? %>
-        <% @post.errors.full_messages.each do |msg| %>
-          <div class="alert alert-danger"><%= msg %></div>
+<% if current_user %>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Edit Your Post</h2>
+      <%= form_for [:admin, @post] do |form| %>
+        <% if @post.errors.any? %>
+          <% @post.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+          <% end %>
         <% end %>
+
+        <div class="form-group">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :category %>
+          <%= form.collection_select(:category_id, Category.all, :id, :name,
+                                     {
+                                         selected: @post.category_id,
+                                         include_blank: 'Select Category'
+                                     },
+                                     class: 'form-control',
+                                     )
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :image %>
+          <%= form.file_field :image %>
+        </div>
+        <!--When using Carrierwave, images are stored as file IDs, this syntax checks for it-->
+        <% if @post.image.file.exists? %>
+          <p>File Url: <%= @post.image %></p>
+          <%= image_tag @post.image.url, width: '50%' %>
+        <% end %>
+        <br>
+
+        <div class="form-group">
+          <%= form.label :tags %>
+          <%= form.text_field :tags, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :body %>
+          <%= form.cktext_area :body, class: 'form-control', rows: 15, ckeditor: { language: 'usa'} %>
+        </div>
+        <br>
+        <%= form.submit "Submit", class: 'btn btn-primary' %>
+        <%= link_to "Cancel", admin_posts_path, class: 'btn btn-default' %>
       <% end %>
-
-      <div class="form-group">
-        <%= form.label :title %>
-        <%= form.text_field :title, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :category %>
-        <%= form.collection_select(:category_id, Category.all, :id, :name,
-                                   {
-                                       selected: @post.category_id,
-                                       include_blank: 'Select Category'
-                                   },
-                                   class: 'form-control',
-                                   )
-        %>
-      </div>
-      <div class="form-group">
-        <%= form.label :author %>
-        <%= form.collection_select(:user_id, User.all, :id, :name,
-                                   {
-                                       selected: @post.user_id,
-                                       include_blank: 'Select Author'
-                                   },
-                                   class: 'form-control',
-                                   )
-        %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :image %>
-        <%= form.file_field :image %>
-      </div>
-      <!--When using Carrierwave, images are stored as file IDs, this syntax checks for it-->
-      <% if @post.image.file.exists? %>
-        <p>File Url: <%= @post.image %></p>
-        <%= image_tag @post.image.url, width: '50%' %>
-      <% end %>
-      <br>
-
-      <div class="form-group">
-        <%= form.label :tags %>
-        <%= form.text_field :tags, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :body %>
-        <%= form.cktext_area :body, class: 'form-control', rows: 15, ckeditor: { language: 'usa'} %>
-      </div>
-      <br>
-      <%= form.submit "Submit", class: 'btn btn-primary' %>
-      <%= link_to "Cancel", admin_posts_path, class: 'btn btn-default' %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <% controller.redirect_to new_user_session_path %>
+<% end %>

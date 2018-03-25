@@ -1,25 +1,29 @@
-<div class="card">
-  <div class="card-body">
-    <h2 class="card-title">Manage Categories <%= link_to "Add New", new_admin_category_path, class: 'btn btn-primary pull-right' %></h2>
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Category Title</th>
-        <th>Date Created</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @categories.each do |category| %>
+<% if current_user %>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Manage Categories <%= link_to "Add New", new_admin_category_path, class: 'btn btn-primary pull-right' %></h2>
+      <table class="table table-striped">
+        <thead>
         <tr>
-          <td><%= category.name %></td>
-          <td><%= category.created_at.to_time.strftime('%b %e %Y at %l:%M %p') %></td>
-          <td><%= link_to "Edit", edit_admin_category_path(category), class: 'btn btn-warning' %>
-          <%= link_to "Delete", admin_category_path(category), class: 'btn btn-danger',
-          method: :delete, data: {confirm: 'Are you sure?'}%></td>
+          <th>Category Title</th>
+          <th>Date Created</th>
+          <th>Actions</th>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= category.created_at.to_time.strftime('%b %e %Y at %l:%M %p') %></td>
+            <td><%= link_to "Edit", edit_admin_category_path(category), class: 'btn btn-warning' %>
+            <%= link_to "Delete", admin_category_path(category), class: 'btn btn-danger',
+            method: :delete, data: {confirm: 'Are you sure?'}%></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+<% else %>
+  <% controller.redirect_to new_user_session_path %>
+<% end %>

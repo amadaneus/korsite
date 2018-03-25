@@ -1,20 +1,24 @@
-<div class="card">
-  <div class="card-body">
-    <h2 class="card-title">Add New Category</h2>
-    <%= form_for [:admin, @category] do |form| %>
-      <% if @category.errors.any? %>
-        <% @category.errors.full_messages.each do |msg| %>
-          <div class="alert alert-danger"><%= msg %></div>
+<% if current_user %>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Add New Category</h2>
+      <%= form_for [:admin, @category] do |form| %>
+        <% if @category.errors.any? %>
+          <% @category.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+          <% end %>
         <% end %>
-      <% end %>
 
-      <div class="form-group">
-        <%= form.label :name %>
-        <%= form.text_field :name, class: 'form-control' %>
-      </div>
-      <br>
-        <%= form.submit "Submit", class: 'btn btn-primary' %>
-        <%= link_to "Cancel", admin_categories_path, class: 'btn btn-default' %>
-    <% end %>
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+        </div>
+        <br>
+          <%= form.submit "Submit", class: 'btn btn-primary' %>
+          <%= link_to "Cancel", admin_categories_path, class: 'btn btn-default' %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <% controller.redirect_to new_user_session_path %>
+<% end %>

@@ -24,24 +24,13 @@
                                    )
         %>
       </div>
-      <div class="form-group">
-        <%= form.label :author %>
-        <%= form.collection_select(:user_id, User.all, :id, :name,
-                                   {
-                                       selected: @post.user_id,
-                                       include_blank: 'Select Author'
-                                   },
-                                   class: 'form-control',
-                                   )
-        %>
-      </div>
 
       <div class="form-group">
         <%= form.label :image %>
         <%= form.file_field :image %>
       </div>
-      <% if @post.image.exists? %>
-        <%= image_tag @post.image.url, width: '50%' %>
+      <% if @post.image.present? %>
+        <%= image_tag @post.image, width: '50%' %>
       <% end %>
       <br>
 
@@ -52,9 +41,7 @@
 
       <div class="form-group">
         <%= form.label :body %>
-        <%= form_for @post do |form| %>
-          <%= form.cktext_area :body, class: 'form-control', rows: 15, ckeditor: { language: 'usa'} %>
-        <% end %>
+        <%= form.cktext_area :body, class: 'form-control', rows: 15, ckeditor: { language: 'usa'} %>
       </div>
       <br>
       <%= form.submit "Submit", class: 'btn btn-primary' %>

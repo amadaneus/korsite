@@ -1,13 +1,14 @@
 class Admin::PostsController < Admin::ApplicationController
+  load_and_authorize_resource
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
-    @page_title = 'Add Post'
     @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       flash[:notice]= 'Post Created'
       redirect_to admin_posts_path

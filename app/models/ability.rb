@@ -5,8 +5,13 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
+        can :toggle_status, Post
+        can :feature_post, Post
+        can :read, :all
       else
         can :manage, Post, user_id: user.id
+        can :toggle_status, Post, user_id: user.id
+        can :feature_post, Post, user_id: user.id
         can :read, :all
       end
     #

@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  enum status: { draft: 0, published: 1}
+  enum featured: { general: 0, featured: 1}
+
   belongs_to :category
   belongs_to :user
   has_many :comments

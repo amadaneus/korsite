@@ -1,1 +1,10 @@
-<%= paginate @posts %>
+<h3>Blog Posts</h3>
+<li>
+  <p>
+    <% if able_paginate(@posts) %>
+      <%= paginate @posts %>
+    <% else %>
+      Currently showing all posts.
+    <% end %>
+  </p>
+</li>

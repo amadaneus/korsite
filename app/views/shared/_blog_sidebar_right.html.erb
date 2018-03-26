@@ -9,16 +9,13 @@
 
 <% if params[:action] == 'index' %>
   <ul class="nav">
-    <h3>Blog Pages</h3>
-    <li>
-      <p><%= render(:partial => 'shared/pagination')%></p>
-    </li>
+    <%= render(:partial => 'shared/pagination')%>
   </ul>
 <% end %>
 
 
 <ul class="nav">
-  <h3>Featured Posts</h3>
+  <h4>Featured Posts</h4>
   <li class="nav-item">
     <a class="nav-link" href="#">2018 Tax Season Updates</a>
     <small>Posted on Feb 15 2018</small>

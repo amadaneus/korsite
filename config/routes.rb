@@ -23,7 +23,13 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :posts, :categories, :comments, :users
+    resources :categories, :comments, :users
+    resources :posts do
+      member do
+        get :toggle_status
+        get :feature_post, as: 'feature'
+      end
+    end
   end
 
   root to: 'pages#home'

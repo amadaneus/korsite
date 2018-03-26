@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::ApplicationController
   load_and_authorize_resource
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_stauts, :feature_post]
 
   def new
     @post = Post.new
@@ -47,6 +47,24 @@ class Admin::PostsController < Admin::ApplicationController
   def show
   end
 
+  def toggle_status
+    if @post.draft?
+      @post.published!
+    elsif @post.published?
+      @post.draft!
+    end
+    redirect_to admin_posts_path, notice: 'Post status has been updated.'
+  end
+
+  def feature_post
+    if @post.general?
+      @post.featured!
+      redirect_to admin_posts_path, notice: 'Post is now a featured item on the blog.'
+    elsif @post.featured?
+      @post.general!
+      redirect_to admin_posts_path, notice: 'Post is no longer a featured item on the Blog.'
+    end
+  end
   private
   def post_params
     params.require(:post).permit(:title, :category_id, :user_id, :tags, :image, :body)

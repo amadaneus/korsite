@@ -1,15 +1,15 @@
 <div id="sidebar-wrapper" class="sidebar-sticky">
   <ul class="nav flex-column ml-3">
 
-    <h3><%= link_to 'Keep On Rolling', root_path, class: 'navbar-light navbar-brand-link'%></h3>
+    <h3><%= link_to 'Keep On Rolling', posts_path, class: 'navbar-light navbar-brand-link'%></h3>
     <li class="nav-item">
-      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      <%= link_to "Home", root_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="about.html">About</a>
+      <%= link_to "About", about_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="contact.html">Contact</a>
+      <%= link_to "Contact", new_message_path, class: 'nav-link' %>
     </li>
 
     <li class="nav-item">

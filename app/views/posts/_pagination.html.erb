@@ -1,0 +1,12 @@
+<ul class="nav">
+  <h4>Blog Posts</h4>
+  <li>
+    <p>
+      <% if able_paginate(@posts) %>
+        <%= paginate @posts %>
+      <% else %>
+        Currently showing all posts.
+      <% end %>
+    </p>
+  </li>
+</ul>

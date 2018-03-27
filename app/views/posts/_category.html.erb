@@ -1,9 +1,8 @@
 <ul class="nav">
-  <h3>Blog Topics</h3>
+  <h4>Blog Topics</h4>
     <% @categories.each do |category| %>
       <li class="nav-item">
         <%=link_to category.name, category, class: 'nav-link' %>
       </li>
     <% end %>
 </ul>
-<hr>

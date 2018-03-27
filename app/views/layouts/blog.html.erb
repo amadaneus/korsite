@@ -40,7 +40,10 @@
 
           <nav class="col-md-2 ml-5 mr-auto navbar-light sidebar-right">
             <%= render partial: 'shared/blog_sidebar_right' %>
-            <br>
+            <% if params[:action] == 'index' %>
+                <%= render(:partial => 'pagination')%>
+            <% end %>
+            <%= render partial: 'feature', locals: {features: @features} %>
             <%= render partial: 'category', locals: {categories: @categories} %>
           </nav>
         </div>

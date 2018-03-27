@@ -2,11 +2,12 @@
   <% if @posts.exists? %>
     <% @posts.each do |post| %>
       <h3><%= link_to post.title, post, class: 'blog-link' %></h3>
-      <small>Posted by <%= post.user.name %> on <%= post.created_at %></small>
+      <small>Posted by <%= post.user.name %> on <%= post.created_at.to_time.strftime('%b %e %Y at %l:%M %p') %></small>
       <%= image_tag post.image, class:'img-blog pb-5' %>
       <div class="post-content">
-        <p><%= sanitize post.body.truncate(200, omission: '...Read More') %></p>
-        <a href="#" class="btn btn-kor btn-block">Read More</a>
+        <p><%= sanitize post.body.truncate(200, omission: '...') %>
+          <%= link_to '(Read More)', post_path(post), class: 'blog-link' %>
+        </p>
       </div>
     <% end %>
   <% else %>

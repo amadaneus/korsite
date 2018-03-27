@@ -1,0 +1,11 @@
+<ul class="nav mb-3">
+  <h4>Featured Posts</h4>
+  <% @features.each do |feature| %>
+    <li class="nav-item">
+      <%= image_tag feature.image, width: '250px' %>
+      <small>posted on <%= feature.created_at.to_time.strftime('%b %e %Y') %> by
+        <%= feature.user.name %></small>
+      <p><%= link_to feature.title, class: 'nav-link' %></p>
+  <% end %>
+  </li>
+</ul>

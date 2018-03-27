@@ -7,17 +7,8 @@
   </p>
 </ul>
 
-<% if params[:action] == 'index' %>
-  <ul class="nav">
-    <%= render(:partial => 'shared/pagination')%>
-  </ul>
-<% end %>
-
-
-<ul class="nav">
-  <h4>Featured Posts</h4>
-  <li class="nav-item">
-    <a class="nav-link" href="#">2018 Tax Season Updates</a>
-    <small>Posted on Feb 15 2018</small>
-  </li>
-</ul>
+<ol class="list-unstyled social-links">
+  <h4>Follow Us</h4>
+  <li><a href="https://www.facebook.com/Keep-On-Rolling-Bookkeeping-Taxes-145454318815222/">
+    <%= fa_icon "facebook-square", class: "nav-link fa-2x" %></a></li>
+</ol>

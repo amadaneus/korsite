@@ -8,11 +8,13 @@ class PostsController < ApplicationController
       @posts = Post.published.page(params[:page]).per(5).order('created_at DESC')
     end
     @categories = Category.all
+    @features = Post.published.featured.all.limit(5)
   end
 
   def show
     @post = Post.published.find(params[:id])
     @categories = Category.all
+    @features = Post.published.featured.all.limit(5)
   end
 
 end

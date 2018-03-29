@@ -9,6 +9,7 @@
 body, html {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   background-color: #dbe3dbff;
 }
 
@@ -33,16 +34,22 @@ h6, .h6 {
 }
 
 #nav.shrink {
-  height: 60px;
+  height: auto;
   transition: all ease .5s;
-  background: #dbe3dbff;
-  padding: 1em;
+  background-color: #dbe3dbff;
+  padding: 1.5em;
 }
 
 .navbar-brand {
   font-family: 'Ultra', serif;
 }
 
+.navbar-inner {
+  width: 100%;
+  margin-left: -1em;
+  margin-right: -1em;
+  background-color: #dbe3dbff;
+}
 
 /* Content Containers */
 

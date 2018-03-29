@@ -1,19 +1,18 @@
-<div id="sidebar-wrapper" class="sidebar-sticky">
-  <ul class="nav flex-column ml-3">
+<nav id="sidebar-nav">
+  <div id="sidebar-wrapper" class="sidebar-sticky">
+    <ul class="nav flex-column ml-3">
 
-    <h3><%= link_to 'Keep On Rolling', posts_path, class: 'navbar-light navbar-brand-link'%></h3>
-    <li class="nav-item">
-      <%= link_to "Home", root_path, class: 'nav-link' %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "About", about_path, class: 'nav-link' %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Contact", new_message_path, class: 'nav-link' %>
-    </li>
+      <h3><%= link_to 'Keep On Rolling', posts_path, class: 'navbar-light navbar-brand-link'%></h3>
+      <li class="nav-item">
+        <%= link_to "Home", root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About", about_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contact", new_message_path, class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <li class="nav-item">
-      <%= render 'shared/search' %>
-    </li>
-  </ul>
-</div>

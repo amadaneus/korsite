@@ -23,11 +23,13 @@
 <% end %>
 
 <% elsif params[:controller] == 'posts' %>
+  <ul class="nav mb-3">
+    <h3>Search</h3>
+    <li class="nav-item">
       <%= form_tag(posts_path, :method => "get", id:"search-form", class:"search-form form-group form-inline my-2 my-lg-0") do %>
-        <div class="">
-          <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control mr-sm-2' %>
-          <%= submit_tag "Search", :name => nil, class: 'btn btn-success my-2 my-sm-0' %>
-        </div>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control mr-sm-2' %>
+    </li>
+  </ul>
 <% end %>
 
 <% end %>

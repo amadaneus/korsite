@@ -14,48 +14,65 @@
 <body>
 
 <div id="wrapper">
-  <nav class="navbar navbar-light flex-md-nowrap p-0">
-  </nav>
-
   <div class="container-fluid">
-    <div class="row">
-
-      <nav class="col-md-2 d-none d-md-block sidebar">
-        <%= render "shared/blog_sidebar_left" %>
-      </nav>
-
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pb-5">
-        <div class="row">
-          <div id="content-wrapper" class="col-md-7 pb-5">
-            <% if flash[:notice] %>
-              <div class="alert alert-success"><%= flash[:notice] %></div>
-            <% end %>
-
-            <% if flash[:alert] %>
-              <div class="alert alert-danger"><%= flash[:alert] %></div>
-            <% end %>
-
-            <%= yield %>
+    <div class="row flex-xl-nowrap">
+      <div class="col-12 col-md-2 col-xl-2 sidebar">
+        <nav class="navbar sidebar-expand-md">
+          <div class="sidebar-content flex-column ml-3">
+            <h3><%= link_to 'Keep On Rolling', posts_path, class: 'navbar-light navbar-brand-link'%></h3>
+            <button class="btn btn-outline-dark d-md-none" type="button" data-toggle="collapse"
+                    data-target="#sidebarCollapse" aria-controls="sidebarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+              <span><small>Menu</small></span>
+            </button>
+            <div id="sidebarCollapse" class="navbar-collapse collapse">
+              <ul class="sidebar-nav" >
+                <li class="nav-item">
+                  <%= link_to "Home", root_path, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "About", about_path, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Contact", new_message_path, class: 'nav-link' %>
+                </li>
+              </ul>
+            </div>
           </div>
+        </nav>
+      </div>
 
-          <nav class="col-md-2 ml-5 mr-auto navbar-light sidebar-right">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 my-5"></div>
+          <main role="main">
+            <div id="content-wrapper" class="col-12 col-md-7 mr-3 pb-5">
+              <% if flash[:notice] %>
+                <div class="alert alert-success"><%= flash[:notice] %></div>
+              <% end %>
+
+              <% if flash[:alert] %>
+                <div class="alert alert-danger"><%= flash[:alert] %></div>
+              <% end %>
+              <%= yield %>
+            </div>
+          </main>
+          <div class="col-md-2 ml-3 mr-auto navbar-light sidebar-right">
             <%= render partial: 'shared/blog_sidebar_right' %>
             <% if params[:action] == 'index' %>
-                <%= render(:partial => 'pagination')%>
+              <%= render(:partial => 'pagination')%>
             <% end %>
             <%= render partial: 'feature', locals: {features: @features} %>
             <%= render partial: 'category', locals: {categories: @categories} %>
-          </nav>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <footer class="footer">
-              <%= render "shared/blog_footer" %>
-            </footer>
           </div>
         </div>
-      </main>
+
+        <footer id="footer" class="row mt-5">
+          <div class="col-md-12 mt-5">
+            <%= render "shared/blog_footer" %>
+          </div>
+        </footer>
+      </div>
     </div>
   </div>
 </div>

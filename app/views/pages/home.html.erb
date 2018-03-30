@@ -1,39 +1,74 @@
 <div class="hero-container">
   <!-- Page Header-->
-  <div class="container">
-    <div class="row hero-text">
+  <div class="container hero-text">
+    <div class="row">
       <div class="col-md-10">
         <hr class="hero-hr">
-        <p class="hero-copy text-left strong m-b-30">You know you need to do your taxes, but you're too busy.<br>
+        <p class="hero-copy text-left strong m-b-30">
+          You know you need your taxes done, but you're busy.<br>
+          Busy driving, busy earning, busy barbequing.<br>
           I get it--I'm a tax professional. Let me help you...</p>
         <hr class="hero-hr">
       </div>
       <div class="col-md-10 text-left">
         <h1 class="hero-header">KEEP<br>ON<br>ROLLING</h1>
-        <h2 class="m-b-15">Tax Services & Bookkeeping</h2>
-        <p class="hero-copy">34811 LBJ Freeway, Suite 2101, Dallas, TX 75241 - (972)-288-8567</p>
+        <h2 class="hero-subheader m-b-15">Tax Services & Bookkeeping for Truckers</h2>
+        <p class="hero-copy">34811 LBJ Freeway, Suite 2101, Dallas, TX 75241</p>
+        <p class="hero-copy"><strong>Call Julie at 1-(972)-288-8567 for all appointments</strong></p>
       </div>
       <div class="col-md-10 text-left">
-        <p><%= link_to 'Get your taxes done by someone responsible', ("#about"), class: 'btn btn-kor' %></p>
-        <p><%= link_to 'Get Edjimacated for the 2018 Tax Season', ("#news"), class: 'btn btn-kor' %></p>
+        <p><%= link_to 'Click here if you want to get your taxes done by someone responsible', ("#reg"), class: 'btn btn-kor' %></p>
+        <p><%= link_to 'Or, Click here to get Edjimacated about my accounting services', ("#about"), class: 'btn btn-kor' %></p>
       </div>
     </div>
   </div>
 </div>
 
 <main role="main">
-  <div class="container scroll-section" id="about">
-    <div class="section my-5">
-      <h1 class="section-header">I make taxes simple for<br> Truckers & Logistics Professionals.</h1>
-      <p>Part of being road legal is staying on top of your taxes. My name is Julie Williams, I'm an accounting professional
-        Based in Dallas, TX and I've provided tax services, bookkeeping, and financial planning services
-        Drivers, Brokers, Fleet Owners, and Logistics professionals for over 30 years.</p>
-      <p>My guys all trust me to keep their accounts balanced so they can keep freight moving and checks rolling in.</p>
-      <p>I use my knowledge to Edjimacate drivers on how to win during tax season and win in personal finance.</p>
-      <p>If you love the freedom of the open road as much as you love earning money, you need someone like me--
-      I can show you how to stay financially free and to keep your dollars in your pocket.</p>
-      <p><a class="btn btn-kor" href="#reg">That's what I need!</a></p>
-      <p><a class=" btn btn-kor" href="#feature1">Edjimacate me.</a></p>
+  <div class="container" id="about">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 section my-5">
+        <h1 class="">I make taxes simple for<br> Truckers & Fleet Owners</h1>
+        <p>Part of being road legal is staying on top of your taxes. My name is Julie Williams, I'm an accounting professional
+          Based in Dallas, TX and I've provided tax services, bookkeeping, and financial planning services
+          Drivers, Brokers, Fleet Owners, and Logistics professionals for over 30 years.</p>
+        <p>My guys all trust me to keep their accounts balanced so they can keep freight moving and checks rolling in.</p>
+        <p>I use my knowledge to Edjimacate drivers on how to win during tax season and win in personal finance.</p>
+        <p>If you love the freedom of the open road as much as you love earning money, you need someone like me--
+          I can show you how to stay financially free and to keep your dollars in your pocket.</p>
+        <p><a class="btn btn-kor" href="#reg">That's what I need!</a></p>
+        <p><a class=" btn btn-kor" href="#edjimacate">Gimme some more Edjimacation.</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="container section" id="edjimacate">
+    <div class="row my-5">
+      <div class="col-md-12 col-sm-12 mb-3">
+        <h1 class="">Get More Edjimacated</h1>
+        <h5>I provide accounting services that keep your business rolling</h5>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h2>Tax Preparation Services for Truckers</h2>
+        <p>Part of being road legal is staying on top of your taxes. My name is Julie Williams, I'm an accounting professional
+          Based in Dallas, TX and I've provided tax services, bookkeeping, and financial planning services
+          Drivers, Brokers, Fleet Owners, and Logistics professionals for over 30 years.</p>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h2>Bookkeeping for Owner-Operators and Fleet Owners</h2>
+        <p>Part of being road legal is staying on top of your taxes. My name is Julie Williams, I'm an accounting professional
+          Based in Dallas, TX and I've provided tax services, bookkeeping, and financial planning services
+          Drivers, Brokers, Fleet Owners, and Logistics professionals for over 30 years.</p>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h2>Authority and Incorporation Setup</h2>
+        <p>Part of being road legal is staying on top of your taxes. My name is Julie Williams, I'm an accounting professional
+          Based in Dallas, TX and I've provided tax services, bookkeeping, and financial planning services
+          Drivers, Brokers, Fleet Owners, and Logistics professionals for over 30 years.</p>
+      </div>
+      <div class="col-md-12 col-sm-12">
+        <p><a class="btn btn-kor" href="#reg">That's exactly what I need!</a></p>
+        <p><a class=" btn btn-kor" href="#feature1">Gimme just a little bit more Edjimacation</a></p>
+      </div>
     </div>
   </div>
 
@@ -61,13 +96,13 @@
   <div id="reg" class="module bg-korprimary scroll-section">
     <div class="container">
       <div class="row">
-        <div class="col-7">
+        <div class="col-md-7 col-sm-12 mb-3">
           <h2 class="text-left mt-5">Need an accountant who
             can sort out your mess and keep your books in line?</h2>
-          <h5 class="text-left mb-2">Fill out this form to find out how my team can keep you rolling:</h5>
+          <h5 class="text-left mb-2">Fill out this form to learn about how I can support your business:</h5>
           <%= render :partial => 'registrations/registration_form' %>
         </div>
-        <div class="col-5">
+        <div class="col-md-5 d-none d-sm-block">
           <%= image_tag ("kor2.jpg"), class: 'img-fluid'%>
         </div>
       </div>

@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::ApplicationController
-  load_and_authorize_resource
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_stauts, :feature_post]
+  load_and_authorize_resource :find_by => :slug
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status, :feature_post]
 
   def new
     @post = Post.new
@@ -65,6 +65,7 @@ class Admin::PostsController < Admin::ApplicationController
       redirect_to admin_posts_path, notice: 'Post is no longer a featured item on the Blog.'
     end
   end
+
   private
   def post_params
     params.require(:post).permit(:title, :category_id, :user_id, :tags, :image, :body)

@@ -35,6 +35,7 @@ gem 'devise'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'ckeditor', '~> 4.2', '>= 4.2.4'
 gem 'rails-html-sanitizer'
+gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 
 # Image&File Management
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'

@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.published.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @categories = Category.all
     @features = Post.published.featured.all.limit(5)
   end

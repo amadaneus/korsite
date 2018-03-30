@@ -71,7 +71,7 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
 end

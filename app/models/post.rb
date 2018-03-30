@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   enum status: { draft: 0, published: 1}
   enum featured: { general: 0, featured: 1}
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   belongs_to :category
   belongs_to :user

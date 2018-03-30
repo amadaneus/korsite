@@ -13,7 +13,9 @@
       </thead>
       <tbody>
         <tr>
+          <% if @posts.exists? %>
           <td><%= link_to @posts.last[:title], post_path(@posts.last[:id]) %></td>
+            <% end %>
         </tr>
       </tbody>
     </table>

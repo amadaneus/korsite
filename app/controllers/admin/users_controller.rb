@@ -4,9 +4,9 @@ class Admin::UsersController < Admin::ApplicationController
 
   def index
     if params[:search]
-      @users = Users.search(params[:search]).page(params[:page]).per(5).order('created_at DESC')
+      @users = User.search(params[:search]).page(params[:page]).per(5).order('created_at DESC')
     else
-      @users = Users.page(params[:page]).per(5).order('created_at DESC')
+      @users = User.all.order('created_at DESC')
     end
   end
 

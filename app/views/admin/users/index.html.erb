@@ -18,7 +18,7 @@
             <td><%= user.email %></td>
             <td><%= user.created_at.to_time.strftime('%b %e %Y at %l:%M %p') %></td>
             <td><%= link_to "Edit", edit_user_registration_path(user), class: 'btn btn-warning' %>
-              <%= link_to "Delete", delete_user_registration_path(user), class: 'btn btn-danger',
+              <%= link_to "Delete", admin_user_path(user), class: 'btn btn-danger',
                           method: :delete, data: {confirm: 'Are you sure?'}%></td>
           </tr>
         <% end %>

@@ -9,6 +9,6 @@ class RegistrationMailer < ApplicationMailer
     @status = registration.status
     @body = registration.body
 
-    mail to: ENV["EMAIL_USER"], from: registration.email, subject: "New Client Registration from Keep on Rolling"
+    mail to: ENV["EMAIL_USER"], reply_to: registration.email, from: ENV['EMAIL_USER'], subject: "New Client Registration from Keep on Rolling"
   end
 end

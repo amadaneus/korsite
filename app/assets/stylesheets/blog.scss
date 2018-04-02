@@ -452,6 +452,9 @@ h6, .h6 {
 }
 
 .post {
+  @media (min-width: 768px) {
+    min-width: 700px;
+}
 }
 
 .list-group {

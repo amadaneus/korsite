@@ -19,6 +19,7 @@
 /.byebug_history
 
 /.idea
+/db/seeds.rb
 /config/secrets.yml
 /config/application.yml
 /config/database.yml

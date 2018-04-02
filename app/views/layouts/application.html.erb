@@ -15,7 +15,7 @@
   <body>
 
   <nav id="nav" class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container-fluid">
+    <div class="container">
       <%= link_to 'Keep on Rolling', root_path, class: 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarKOR" aria-controls="navbarKOR" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,6 +42,10 @@
   <%= yield %>
 
   <%= render "shared/application_footer" %>
+
+  <div class='scrolltop'>
+    <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+  </div>
 
   </body>
 </html>

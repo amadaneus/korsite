@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:amadaneus/korsite.git'
 set :user, 'deploy'
 set :application, 'korsite'
 set :rails_env, 'production'
-server '13.58.200.112', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
+server '18.217.62.125', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
 
